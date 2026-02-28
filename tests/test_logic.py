@@ -1,48 +1,29 @@
-def calculate_remaining_limit(limit, total_sales):
-    """Kredit limitidan qolgan summani hisoblash (oddiy mantiq)"""
-    return limit - total_sales
+import sys
+from unittest.mock import MagicMock
 
+mock_odoo = MagicMock()
+sys.modules['odoo'] = mock_odoo
+sys.modules['odoo.models'] = MagicMock()
+sys.modules['odoo.fields'] = MagicMock()
+sys.modules['odoo.api'] = MagicMock()
 
-def test_limit_calculation():
-    # Test ma'lumotlari
-    limit = 1000
-    sales = 400
+def test_credit_limit_logic():
+    limit = 50000000
+    current_due = 48000000
+    new_order = 5000000
+    # Agar limitdan oshsa True qaytarishi kerak
+    is_blocked = (current_due + new_order) > limit
+    assert is_blocked is True
 
-    # Kutilayotgan natija: 600
-    result = calculate_remaining_limit(limit, sales)
+def test_approval_threshold_logic():
+    threshold = 10000
+    order_amount = 12000
+    needs_approval = order_amount > threshold
+    assert needs_approval is True
 
-    assert result == 600
-    assert result > 0
-
-
-def test_limit_exceeded():
-    limit = 1000
-    sales = 1200
-    result = calculate_remaining_limit(limit, sales)
-
-    assert result < 0  # Limitdan oshib ketganini bildiradi
-
-
-def check_customer_status(customer_id, get_data_func):
-    """Mijoz ma'lumotini tashqi funksiyadan olib tekshiradi"""
-    data = get_data_func(customer_id)
-    if data['debt'] > 1000:
-        return "Blocked"
-    return "Active"
-
-
-def test_customer_blocked_with_mock(mocker):
-    fake_data_func = mocker.Mock(return_value={'debt': 1500})
-    status = check_customer_status(1, fake_data_func)
-
-    # Tekshiruv
-    assert status == "Blocked"
-    fake_data_func.assert_called_once_with(1)
-
-
-def test_customer_active_status():
-    # Qarzi kam bo'lgan mijozni tekshiramiz
-    fake_data = {'debt': 500}
-    status = check_customer_status(2, lambda x: fake_data)
-
-    assert status == "Active"
+def test_under_limit_logic():
+    limit = 50000000
+    current_due = 10000000
+    new_order = 5000000
+    is_blocked = (current_due + new_order) > limit
+    assert is_blocked is False

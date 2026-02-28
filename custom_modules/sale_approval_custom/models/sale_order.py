@@ -6,7 +6,6 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     def action_confirm(self):
-        # Kredit limit tekshiruvi (agar modul o'rnatilgan bo'lsa yuqoridagi kod ishlaydi)
         # Approval tekshiruvi
         if not self.env.context.get('skip_approval_check') and self.amount_total > 10000:
             approval = self.env['sale.approval.request'].search([

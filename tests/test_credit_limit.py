@@ -1,6 +1,5 @@
 import unittest
 from unittest.mock import MagicMock
-# Odoo xatolarini simulyatsiya qilish uchun
 class ValidationError(Exception): pass
 
 class TestCreditLimit(unittest.TestCase):
@@ -21,6 +20,5 @@ class TestCreditLimit(unittest.TestCase):
     def test_02_approval_logic(self):
         """TT: 10,000$ dan oshganda approval holati"""
         order_amount = 11000
-        # Mantiq: Agar > 10000 bo'lsa True bo'lishi shart
         is_approval_required = order_amount > self.approval_threshold
         self.assertTrue(is_approval_required)

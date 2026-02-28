@@ -1,0 +1,10 @@
+[run]
+source =
+    custom_modules/customer_credit_control
+    custom_modules/sale_approval_custom
+omit =
+    */__init__.py
+    */tests/*
+
+[report]
+show_missing = True

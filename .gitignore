@@ -1,0 +1,30 @@
+# --- macOS tizim fayllari ---
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- PyCharm va IDE sozlamalari ---
+.idea/
+.vscode/
+*.swp
+*.iml
+*.iws
+
+# --- Python kesh fayllari ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.env
+venv/
+ENV/
+
+# --- Odoo vaqtinchalik fayllari ---
+*.log
+/filestore/
+/sessions/
+*.conf
+
+# --- Ma'lumotlar bazasi va kesh ---
+*.db
+*.sqlite

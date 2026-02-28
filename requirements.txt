@@ -1,0 +1,7 @@
+# Odoo backend kutubxonalari
+psycopg2-binary
+vobject
+pytz
+pyyaml
+# Test uchun
+pytest

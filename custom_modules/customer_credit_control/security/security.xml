@@ -1,0 +1,7 @@
+<odoo>
+    <record id="group_credit_limit_manager" model="res.groups">
+        <field name="name">Credit Limit Manager (Accounting)</field>
+        <field name="category_id" ref="base.module_category_accounting_accounting"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>

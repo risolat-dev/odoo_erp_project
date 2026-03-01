@@ -15,7 +15,7 @@ Mantiqiy qismlarni Pytest yordamida tekshirganman. Hozirda testlar koding **100%
 - **Pytest** & **Pytest-Cov**
 
 ### 📦 Qanday ishlatish kerak?
-1. Loyihani yuklab oling: `git clone https://github.com/username/odoo_erp_project.git`
+1. Loyihani yuklab oling: `git clone https://github.com/risolat-dev/odoo_erp_project.git`
 2. Kutubxonalarni o'rnating: `pip3 install -r requirements.txt`
 3. Odoo serverni yoqing: `python3 odoo/odoo-bin -c odoo.conf --addons-path=odoo/addons,custom_modules`
 

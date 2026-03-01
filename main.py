@@ -18,7 +18,7 @@ if __name__ == "__main__":
         '--config=' + os.path.join(root_path, 'odoo.conf'),
         '--addons-path=' + f"{os.path.join(odoo_path, 'addons')},custom_modules",
         # Modullarni yangilash
-        '-u', 'custom_credit_limit,sale_approval_request'
+        '-u', 'customer_credit_control,sale_approval_custom'
     ]
 
-    odoo.cli.main(args)
+    odoo.cli.command.main()

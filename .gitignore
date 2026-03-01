@@ -28,3 +28,6 @@ ENV/
 # --- Ma'lumotlar bazasi va kesh ---
 *.db
 *.sqlite
+
+odoo/
+*.pyc

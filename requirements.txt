@@ -1,7 +1,9 @@
 # Odoo backend kutubxonalari
+odoo==17.0
 psycopg2-binary
 vobject
 pytz
 pyyaml
 # Test uchun
 pytest
+pytest-cov

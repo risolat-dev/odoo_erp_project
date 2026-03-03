@@ -8,7 +8,6 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/credit_limit_views.xml',
-        'views/sale_order_views.xml',
     ],
     'installable': True,
     'application': False,

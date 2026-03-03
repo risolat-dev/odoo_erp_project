@@ -19,11 +19,11 @@ class CustomerCreditLimit(models.Model):
         ('unique_active_partner', 'unique(partner_id, active)', 'A partner can only have one active credit limit!')
     ]
 
-    @api.depends('partner_id', 'partner_id.total_due', 'credit_limit')
+    @api.depends('partner_id', 'partner_id.credit', 'credit_limit')
     def _compute_amounts(self):
         for rec in self:
-            # Accounting'dagi posted to'lanmagan invoice'lar summasi
-            rec.total_due = rec.partner_id.total_due
+            # Odoo'da mijozning qarzi 'credit' maydonida bo'ladi
+            rec.total_due = rec.partner_id.credit
             rec.remaining_credit = rec.credit_limit - rec.total_due
 
     @api.constrains('active', 'partner_id')

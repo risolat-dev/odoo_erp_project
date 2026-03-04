@@ -1,23 +1,19 @@
-# Odoo 17 ERP Customization
+# Odoo 17: Sales Approval & Credit Control System
 
-Salom! Bu loyiha Odoo 17 da savdo jarayonlarini va mijozlar balansini nazorat qilish uchun yozilgan.
+Professional ERP module customization for automated sales workflows and financial risk management.
 
-### 🚀 Nimalar bor?
-- **Credit Limit Control**: Agar mijozning qarzi belgilangan limitdan oshib ketsa, tizim sotuvga ruxsat bermaydi.
-- **Sales Approval**: Katta summali savdolarni menejer tasdiqlaydigan qilib sozlaganman.
+## 🚀 Key Features
+- **Sales Approval Workflow**: High-value orders (10,000+) require manager confirmation.
+- **Customer Credit Control**: Automated blocking of sales if the customer exceeds their credit limit.
+- **Unit Testing**: 97% Code Coverage achieved using `pytest` and Odoo test framework.
 
-### 🧪 Testlash (Pytest)
-Mantiqiy qismlarni Pytest yordamida tekshirganman. Hozirda testlar koding **100%** qismini tekshiradi.
-- **Run tests**: `pytest --cov=tests tests/`
+## 🛠 Tech Stack
+- **Framework**: Odoo 17.0 (Community/Enterprise)
+- **Language**: Python 3.10
+- **Database**: PostgreSQL
+- **DevOps**: Docker & Docker-Compose
 
-### 🛠 Texnologiyalar
-- **Python 3.13**, **Odoo 17.0**, **PostgreSQL**
-- **Pytest** & **Pytest-Cov**
-
-### 📦 Qanday ishlatish kerak?
-1. Loyihani yuklab oling: `git clone https://github.com/risolat-dev/odoo_erp_project.git`
-2. Kutubxonalarni o'rnating: `pip3 install -r requirements.txt`
-3. Odoo serverni yoqing: `python3 odoo/odoo-bin -c odoo.conf --addons-path=odoo/addons,custom_modules`
-
----
-**Muallif:** Risolat - Python Backend Developer
+## 🧪 Testing & Quality
+To run the automated test suite with coverage report:
+```bash
+make test

@@ -13,11 +13,9 @@ if odoo_path not in sys.path:
 import odoo
 
 if __name__ == "__main__":
-    # 3. Serverni ishga tushirish parametrlari
     args = [
         '--config=' + os.path.join(root_path, 'odoo.conf'),
         '--addons-path=' + f"{os.path.join(odoo_path, 'addons')},custom_modules",
-        # Modullarni yangilash
         '-u', 'customer_credit_control,sale_approval_custom'
     ]
 

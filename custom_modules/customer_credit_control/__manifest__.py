@@ -1,15 +1,10 @@
 {
     'name': 'Customer Credit Control',
-    'version': '1.0',
-    'category': 'Sales/Accounting',
-    'summary': 'Manage customer credit limits and block sales if exceeded',
-    'depends': ['sale', 'account'],
+    'depends': ['base', 'sale'],  # SHU QATORNI TEKSHIRING
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/credit_limit_views.xml',
     ],
     'installable': True,
-    'application': False,
-    'license': 'LGPL-3',
 }

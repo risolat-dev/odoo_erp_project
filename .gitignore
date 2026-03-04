@@ -24,6 +24,8 @@ ENV/
 /filestore/
 /sessions/
 *.conf
+/odoo.conf
+/data/
 
 # --- Ma'lumotlar bazasi va kesh ---
 *.db
